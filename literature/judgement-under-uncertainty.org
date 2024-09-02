@@ -1,0 +1,19 @@
+#+Title: Judgement Under Uncertainty - Heuristics and Biases
+
+** Biases
+
+- Insensitivity to prior probability of outcomes
+- Insensitivity to sample size
+- Misconceptions of chance
+- Insensitivity to predictability
+- The illusion of validity
+- Misconceptions of regression
+- Biases due to retrievability of instances
+- Biases due to the effectiveness of a search set
+- Biases of Imaginability
+- Illusory Correlation
+- Insufficient Adjustment
+- Anchoring in the assessment of subjective probability distribution
+
+** References
+1. https://www2.psych.ubc.ca/~schaller/Psyc590Readings/TverskyKahneman1974.pdf
