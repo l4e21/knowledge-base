@@ -1,0 +1,21 @@
+#+Title: Calculus 3
+
+** Resources
+
+Professor Leonard Calculus 3 Lectures https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7
+
+** Notes
+
+[[../screenshots/calc-3-1.jpeg]]
+[[../screenshots/calc-3-2.jpeg]]
+[[../screenshots/calc-3-3.jpeg]]
+[[../screenshots/calc-3-4.jpeg]]
+[[../screenshots/calc-3-5.jpeg]]
+[[../screenshots/calc-3-6.jpeg]]
+[[../screenshots/calc-3-7.jpeg]]
+[[../screenshots/calc-3-8.jpeg]]
+[[../screenshots/calc-3-9.jpeg]]
+[[../screenshots/calc-3-10.jpeg]]
+[[../screenshots/calc-3-11.jpeg]]
+[[../screenshots/calc-3-12.jpeg]]
+[[../screenshots/calc-3-13.jpeg]]

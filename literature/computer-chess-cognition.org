@@ -1,0 +1,25 @@
+#+Title: Computers, Chess, and Cognition
+
+Computer chess has been treated like the drosophilia of computer science.
+
+[[../screenshots/chess-computers-cognition-1.png]]
+
+[[../screenshots/chess-computers-cognition-2.png]]
+
+
+Edgar Allen Poe fascinated Mechanical Turk. Thought there was a man inside the Turk.
+
+Razoring: Evaluates before the end of the line, if it's a bad enough line just abandons it because it's unlikely the last 3 moves will change things. 
+
+Knights are worth more in the centre of the board.
+
+[[../screenshots/chess-computers-cognition-3.png]]
+
+[[../screenshots/chess-computers-cognition-4.png]]
+
+Null move heuristic: determines zugzwang, presence of tactical threats, even though not legal.
+Culprit selection: If the lines in a branch are consistently bad, then you can identify a point vaguely where the branch 'turns bad' and this is the 'culprit move'.
+
+Testing is hard because of all this. Inductive experience and analysis has historically been the best tester.
+
+Go in the future.

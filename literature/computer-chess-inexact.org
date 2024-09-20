@@ -1,0 +1,13 @@
+#+Title: Computer in Chess: Solving Inexact Search Problems
+
+A task is inexact if it solves via a minimax procedure on a truncated search tree.
+A depth-truncated tree is one which is not exhaustively searched.
+A tree will grow exponentially with depth.
+
+[[../screenshots/search-tree-chess.png]]
+
+One thing we might do is select from 'candidate moves' based on positional features, which is something skilled players actually do in games.
+
+We can also choose to search less deep, having a limiting number.
+Problems with breaking off search numerically is obviously we might break it off not for logical reasons but by compulsion.
+Also, sometimes moves that seem illogical can be good for specific reasons (every position is different).

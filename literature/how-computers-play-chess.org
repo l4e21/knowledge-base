@@ -1,0 +1,61 @@
+#+Title: How Computers Play Chess
+
+Charles Babbage (1792 to 1871) was the first to become interested in the problem.
+
+Came up with this basic algorithm:
+
+1. Is the current position a possible one?
+2. If so, has the machine lost?
+3. If not, has it won?
+4. If not, can it win next move? If so, make that move
+5. If not, could the adversary win if they had the move?
+6. If so, move to prevent this if possible.
+7. If not, the automaton must look to make moves in succession so as to win.
+
+Obviously highly flawed, but chess computers follow a lot of the basic ideas here even today!
+
+1949 Claude E. Shannon at Bell Labs was interested in the problem because he thought it could lead to advancements in automated problem solving. Shannon was a good player in his own right and held his own against Mikhail Botvinnik.
+Suggested the computer must take into account material advantage, pawn structure, piece positioning, mobility, and tactical options.
+Saw that this would take high amounts of computation, suggested evaluating only at stable points (no checks, no hanging pieces, etc).
+Turing also made a machine called 'Turochamp' that would analyse single-moves, searching 1-ply.
+
+Donald Michie made 'Machiavelli' (Michie was active in computer chess even up to the end of his life in 2007) and Turochamp and Machiavelli were intended to play each other but it never happened.
+
+SOMA by Maynard Smith and Machiavelli had the first computer chess game. SOMA's evaluation function made use of three features.
+Material calculations: Material mostly as you'd expect but the queen had a 'penalty' if it was moved early (I.E., player had not castled and queen not on back 2 ranks).
+Mobility calculations: Gave a point for attacking a square, squares next to a king being attacked were given more points, as well as central squares, and pins and 'doubling up' of rooks accounted for.
+
+[[../screenshots/soma-machiavelli-1.png]]
+
+[[../screenshots/soma-machiavelli-2.png]]
+
+[[../screenshots/soma-machiavelli-3.png]]
+
+[[../screenshots/soma-machiavelli-4.png]]
+
+Game ends in a draw because the machines don't know how to play endgames.
+Evaluation was very tedious and manual. Operator had to do quite a lot.
+
+1961 Alan Kotok wrote a chess program written under the guidance of a one John McCarthy. Wrote this under his graduate program-- initially it played poorly, but the program remained after his graduation.
+When McCarthy left MIT he took the program with him and kept working on it. At the end of 1966 there was a match arranged with a soviet program.
+
+[[../screenshots/mccarthy-itep-1.png]]
+
+[[../screenshots/mccarthy-itep-2.png]]
+
+[[../screenshots/mccarthy-itep-3.png]]
+
+
+In 1978, David Levy draws Chess 4.7, the first time ever that a chess engine drew an international master.
+
+By 1983, BELLE was the first program to qualify for the title of U.S. Master. In the 1980s computer chess exploded in strength. Why? More was known about how to write good programs.
+But the most significant change was hardware. In the 1970's Moore's Law etc.
+
+1988 DEEP THOUGHT is born, and is the first to ever beat a world class grandmaster under tournament conditions. By 1990, it considers 2 million positions per second. 
+
+
+Endgame tables are a thing with better hardware.
+
+minimax algorithm with alpha-beta pruning. Calculates a score at the end of each evaluation 'terminal positions'. The minmax algorithm understands that both players are trying to maximise their own score and reduce the other's.
+Programs carry out the algorithm in a depth-first fashion, with an initial maximum depth. Whenever there is a portion of the move-tree unsearched, searches the deepest unsearched branch.
+The most promising position is therefore selected first.

@@ -1,0 +1,145 @@
+#+title: Computer-Aided Reasoning: An Approach by Kaufmann
+
+[[[[../screenshots/acl2-prover-structure.png]]]]
+
+//verify// will start an interactive prover
+//bash// will call the simplifier
+//th// will show us the top-level theorem
+//dv// allows us to 'dive' our pointer to subterms
+//show-rewrites// allows us to show rewrites
+//rewrite// allows us to rewrite from a list
+
+#+BEGIN_SRC acl2
+(defun app (x y)
+  (if (endp x)
+      y
+      (cons (car x) (app (cdr x) y))))
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+The admission of APP is trivial, using the relation O< (which is known
+to be well-founded on the domain recognized by O-P) and the measure
+(ACL2-COUNT X).  We observe that the type of APP is described by the
+theorem (OR (CONSP (APP X Y)) (EQUAL (APP X Y) Y)).  We used primitive
+type reasoning.
+
+Summary
+Form:  ( DEFUN APP ...)
+Rules: ((:FAKE-RUNE-FOR-TYPE-SET NIL))
+Time:  0.00 seconds (prove: 0.00, print: 0.00, other: 0.00)
+ APP
+#+end_example
+
+
+#+BEGIN_SRC acl2
+(defthm associativity-of-app
+  (equal (app (app a b) c)
+  (app a (app b c))))
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+,*1 (the initial Goal, a key checkpoint) is pushed for proof by induction.
+
+Perhaps we can prove *1 by induction.  Three induction schemes are
+suggested by this conjecture.  Subsumption reduces that number to two.
+However, one of these is flawed and so we are left with one viable
+candidate.  
+
+We will induct according to a scheme suggested by (APP A B).
+
+This suggestion was produced using the :induction rule APP.  If we
+let (:P A B C) denote *1 above then the induction scheme we'll use
+is
+(AND (IMPLIES (AND (NOT (ENDP A)) (:P (CDR A) B C))
+              (:P A B C))
+     (IMPLIES (ENDP A) (:P A B C))).
+This induction is justified by the same argument used to admit APP.
+When applied to the goal at hand the above induction scheme produces
+two nontautological subgoals.
+Subgoal *1/2
+Subgoal *1/2'
+Subgoal *1/1
+Subgoal *1/1'
+
+,*1 is COMPLETED!
+Thus key checkpoint Goal is COMPLETED!
+
+Q.E.D.
+
+Summary
+Form:  ( DEFTHM ASSOCIATIVITY-OF-APP ...)
+Rules: ((:DEFINITION APP)
+        (:DEFINITION ENDP)
+        (:DEFINITION NOT)
+        (:FAKE-RUNE-FOR-TYPE-SET NIL)
+        (:INDUCTION APP)
+        (:REWRITE CAR-CONS)
+        (:REWRITE CDR-CONS))
+Time:  0.00 seconds (prove: 0.00, print: 0.00, other: 0.00)
+Prover steps counted:  435
+ ASSOCIATIVITY-OF-APP
+#+end_example
+
+
+#+BEGIN_SRC acl2
+(defun rev (x)
+  (if (endp x)
+      nil
+      (app (rev (cdr x)) (list (car x)))))
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+The admission of REV is trivial, using the relation O< (which is known
+to be well-founded on the domain recognized by O-P) and the measure
+(ACL2-COUNT X).  We observe that the type of REV is described by the
+theorem (OR (CONSP (REV X)) (EQUAL (REV X) NIL)).  We used primitive
+type reasoning and the :type-prescription rule APP.
+
+Summary
+Form:  ( DEFUN REV ...)
+Rules: ((:FAKE-RUNE-FOR-TYPE-SET NIL)
+        (:TYPE-PRESCRIPTION APP))
+Time:  0.00 seconds (prove: 0.00, print: 0.00, other: 0.00)
+ REV
+#+end_example
+
+#+BEGIN_SRC acl2
+(defthm commutativity-of-*-2
+  (equal (* y (* x z))
+         (* x (* y z)))
+  :hints (("Goal"
+           :use ((:instance associativity-of-* (y x) (x y))
+                 (:instance associativity-of-*))
+           :in-theory (disable associativity-of-*))))
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+ACL2 Warning [Subsume] in ( DEFTHM COMMUTATIVITY-OF-*-2 ...):  The
+previously added rule COMMUTATIVITY-OF-* subsumes a newly proposed
+:REWRITE rule generated from COMMUTATIVITY-OF-*-2, in the sense that
+the old rule rewrites a more general target.  Because the new rule
+will be tried first, it may nonetheless find application.
+
+Goal'
+
+Q.E.D.
+
+Summary
+Form:  ( DEFTHM COMMUTATIVITY-OF-*-2 ...)
+Rules: ((:REWRITE COMMUTATIVITY-OF-*))
+Hint-events: ((:USE ASSOCIATIVITY-OF-*))
+Warnings:  Subsume
+Time:  0.02 seconds (prove: 0.00, print: 0.00, other: 0.01)
+Prover steps counted:  132
+ COMMUTATIVITY-OF-*-2
+#+end_example
+
+#+BEGIN_SRC acl2
+
+#+END_SRC
+

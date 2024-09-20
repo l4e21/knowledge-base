@@ -1,0 +1,11 @@
+#+Title: Software Design for Flexibility
+#+Subtitle: How to avoid programming yourself into a corner
+#+Author: Sussman
+
+[[../screenshots/sdf-sussman-1.png]]
+
+[[../screenshots/sdf-sussman-2.png]]
+
+[[../screenshots/sdf-sussman-3.png]]
+
+[[../screenshots/postels-law.png]]

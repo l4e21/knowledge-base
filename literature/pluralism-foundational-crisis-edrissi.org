@@ -1,0 +1,13 @@
+#+Title: Can Pluralism give a satisfactory solution to the foundational crisis in mathematics?
+
+[[../screenshots/reuben-pluralism.png]]
+
+Realism suggests there exist abstract mathematical objects. With the addition that these objects are independent of human interaction, this view becomes platonism.
+
+Benacceraf problem:
+
+1. Human beings exist entirely within space and time
+2. If abstract objects exist, then they do not exist within space and time
+3. If both are true, humans could not have knowledge of them
+
+
