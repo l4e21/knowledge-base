@@ -1,0 +1,8 @@
+#+TITLE: Gameboy Emulator Design
+
+** Resources
+
+- CAMLBOY article https://linoscope.github.io/writing-a-game-boy-emulator-in-ocaml/
+
+
+** 

@@ -449,3 +449,7 @@ Return the initialized session."
     ))
 
 (setf org-support-shift-select t)
+
+(add-hook 'org-mode-hook #'visual-line-mode t)
+
+(setq org-agenda-files (list "~/knowledge-base/permanent/" "~/knowledge-base/literature/"))
